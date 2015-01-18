@@ -1,3 +1,7 @@
+<?php
+	include("apps/database.php");
+?>
+
 <html>
 
 	<header>
@@ -21,15 +25,15 @@
 				</div>
 			</div>
 
-			<div class="content">
+			<div class="content" align="center">
 				<div class="text">
 				</div>
 			</div>
 
 			<div class="sidebar">
-				<a class="sidebtn">Hantera kategorier<div class="under"></div></a>
-				<a class="sidebtn">Hantera sidor<div class="under"></div></a>
-				<a class="sidebtn">Hantera användare<div class="under"></div></a>
+				<?php
+					include("apps/adminNavigation.php");
+				?>
 			</div>
 
 			<div style="clear:both"></div>

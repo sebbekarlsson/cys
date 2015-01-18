@@ -5,10 +5,23 @@ $(document).ready(function(){
 			$(this).find(".under").slideUp();
 		});
 		$(this).find(".under").fadeIn();
-		if($(this).find(".under > .subcat").length < 3){
-			$(this).find(".under").append("<a class='subcat'>Underkategori</a>");
-			$(this).find(".under").append("<a class='subcat'>Underkategori</a>");
-			$(this).find(".under").append("<a class='subcat'>Underkategori</a>");
-		}
+		
+			var idd = $(this).attr("id");
+
+			var under = $(this);
+			$.ajax({
+			  type: "POST",
+			  url: "apps/getSubCat.php",
+			  data: { id: idd}
+			})
+			  .done(function( msg ) {
+			  	under.find(".under").html("");
+			    under.find(".under").append(msg);
+			  });
+
+
+			
+			
+		
 	});
 });
