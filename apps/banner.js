@@ -15,14 +15,11 @@ $(document).ready(function(){
     		if(i < bannerImages.length-1){
     			i++;
     		}else{i = 1;}
+            console.log(bannerImages[i] + " <-");
     		$(".heroholder").fadeIn();
     		$(".heroholder").css("background-image","url(banner/"+bannerImages[i]+")");
-    	},2000);
+    	},10000);
     	
     });
     
-    /*
-		== CIDER EKONOMI DLG ==
-    */
-	
 });
